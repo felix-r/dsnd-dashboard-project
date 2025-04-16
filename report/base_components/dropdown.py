@@ -3,7 +3,6 @@ from fasthtml.common import Select, Label, Div, Option
 
 class Dropdown(BaseComponent):
 
-
     def __init__(self, id="selector", name="entity-selection", label=""):
         self.id = id
         self.name = name

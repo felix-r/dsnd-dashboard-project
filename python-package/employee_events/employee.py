@@ -21,13 +21,14 @@ class Employee(QueryBase, QueryMixin):
 
         # Query 3
         # Write an SQL query
-        # that selects two columns 
+        # that selects two columns
         # 1. The employee's full name
         # 2. The employee's id
         # This query should return the data
         # for all employees in the database
         query = """
-                    SELECT first_name || ' ' || last_name AS full_name, employee_id 
+                    SELECT first_name || ' ' || last_name
+                        AS full_name, employee_id
                     FROM employee
                 """
         return self.query(query)
@@ -37,7 +38,6 @@ class Employee(QueryBase, QueryMixin):
     # This method should return a list of tuples
     # from an sql execution
     def username(self, id):
-        
         # Query 4
         # Write an SQL query
         # that selects an employees full name

@@ -2,6 +2,7 @@
 import pandas as pd
 from .sql_execution import QueryMixin
 
+
 # Define a class called QueryBase
 # Use inheritance to add methods
 # for querying the employee_events database.
@@ -10,6 +11,7 @@ class QueryBase(QueryMixin):
     # Create a class attribute called `name`
     # set the attribute to an empty string
     name = ""
+
     # Define a `names` method that receives
     # no passed arguments
     def names(self):
@@ -29,16 +31,16 @@ class QueryBase(QueryMixin):
         # of id columns used for joining
         # order by the event_date column
         query = f"""
-            SELECT event_date,
-                   SUM(positive_events) AS positive_events,
-                   SUM(negative_events) AS negative_events
-            FROM {self.name}
-            JOIN employee_events
-                USING({self.name}_id)
-            WHERE {self.name}.{self.name}_id = {id}
-            GROUP BY event_date
-            ORDER BY event_date
-        """
+                    SELECT event_date,
+                           SUM(positive_events) AS positive_events,
+                           SUM(negative_events) AS negative_events
+                    FROM {self.name}
+                    JOIN employee_events
+                        USING({self.name}_id)
+                    WHERE {self.name}.{self.name}_id = {id}
+                    GROUP BY event_date
+                    ORDER BY event_date
+                """
         return self.pandas_query(query)
 
     # Define a `notes` method that receives an id argument
@@ -52,12 +54,11 @@ class QueryBase(QueryMixin):
         # so the query returns the notes
         # for the table name in the `name` class attribute
         query = f"""
-            SELECT note_date, note
-            FROM notes
-            JOIN {self.name}
-                USING({self.name}_id)
-            WHERE {self.name}.{self.name}_id = {id}
-            ORDER BY note_date
-        """
+                    SELECT note_date, note
+                    FROM notes
+                    JOIN {self.name}
+                        USING({self.name}_id)
+                    WHERE {self.name}.{self.name}_id = {id}
+                    ORDER BY note_date
+                """
         return self.pandas_query(query)
-

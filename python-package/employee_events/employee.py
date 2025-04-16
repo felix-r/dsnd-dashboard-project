@@ -4,6 +4,7 @@ from .query_base import QueryBase
 # Import dependencies needed for sql execution from the `sql_execution` module
 from .sql_execution import QueryMixin
 
+
 # Define a subclass of QueryBase
 # called Employee
 class Employee(QueryBase, QueryMixin):
@@ -11,7 +12,6 @@ class Employee(QueryBase, QueryMixin):
     # Set the class attribute `name`
     # to the string "employee"
     name = "employee"
-
 
     # Define a method called `names`
     # that receives no arguments
@@ -31,7 +31,6 @@ class Employee(QueryBase, QueryMixin):
                     FROM employee
                 """
         return self.query(query)
-    
 
     # Define a method called `username`
     # that receives an `id` argument
@@ -51,7 +50,6 @@ class Employee(QueryBase, QueryMixin):
                     WHERE employee_id = {id}
                 """
         return self.query(query)
-
 
     # Below is method with an SQL query
     # This SQL query generates the data needed for

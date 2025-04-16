@@ -1,7 +1,7 @@
 # Import the QueryBase class
 from .query_base import QueryBase
 
-# Import dependencies for sql execution
+# Import dependencies needed for sql execution from the `sql_execution` module
 from .sql_execution import QueryMixin
 
 

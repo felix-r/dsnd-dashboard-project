@@ -1,18 +1,20 @@
 import pytest
 from pathlib import Path
 
+from joblib.testing import fixture
+
 # Using pathlib create a project_root
 # variable set to the absolute path
 # for the root of this project
-#### YOUR CODE HERE
+project_root = Path(__file__).resolve().parents[1]
 
 # apply the pytest fixture decorator
 # to a `db_path` function
-#### YOUR CODE HERE
-    
+@fixture
+def db_path():
     # Using the `project_root` variable
     # return a pathlib object for the `employee_events.db` file
-    #### YOUR CODE HERE
+    return project_root / 'data' / 'employee.db'
 
 # Define a function called
 # `test_db_exists`

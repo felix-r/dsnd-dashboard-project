@@ -1,7 +1,18 @@
 
-# Software Engineering for Data Scientists 
+# Dashboard for employee performance and recruitment risk
 
-This repository contains starter code for the **Software Engineering for Data Scientists** final project. Please reference your course materials for documentation on this repository's structure and important files. Happy coding!
+This repository contains files and code to create a dashboard to assess employee
+performance and recruitment risk.
+
+To start the dashboard, you first need to install the `employee_events` package
+using
+
+```
+>>> cd python-package
+>>> pip install .
+```
+
+To start the dashboard, run `python dashboard.py` in the `report` folder.
 
 ### Repository Structure
 ```
@@ -35,7 +46,6 @@ This repository contains starter code for the **Software Engineering for Data Sc
 │   ├── dashboard.py
 │   └── utils.py
 ├── requirements.txt
-├── start
 ├── tests
     └── test_employee_events.py
 ```
